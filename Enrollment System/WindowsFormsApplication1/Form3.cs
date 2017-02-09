@@ -64,8 +64,8 @@ namespace WindowsFormsApplication1
         private void button3_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Form2 Form2 = new Form2();
-            Form2.ShowDialog();
+            Form10 Form10 = new Form10();
+            Form10.ShowDialog();
         }
 
         private void button5_Click(object sender, EventArgs e)
@@ -87,6 +87,13 @@ namespace WindowsFormsApplication1
             this.Hide();
             Form7 Form7 = new Form7();
             Form7.ShowDialog();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form5 Form5 = new Form5();
+            Form5.ShowDialog();
         }
     }
 }

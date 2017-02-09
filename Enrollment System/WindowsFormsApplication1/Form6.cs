@@ -39,7 +39,7 @@ namespace WindowsFormsApplication1
             dt.Columns.Add("ContactNumber");
 
             admin4.Connect();
-            admin4.admin2 = new MySqlCommand("Select * from listofstudents where Lastname like'%" + textBox1.Text + "%'", admin4.adminn);
+            admin4.admin2 = new MySqlCommand("Select * from listofstudents where LastName like'%" + textBox1.Text + "%'", admin4.adminn);
             admin4.admin1 = admin4.admin2.ExecuteReader();
 
             while (admin4.admin1.Read())
@@ -78,10 +78,11 @@ namespace WindowsFormsApplication1
             dt1.Columns.Add("FirstName");
             dt1.Columns.Add("UserName");
             dt1.Columns.Add("Password");
+            dt1.Columns.Add("Status");
            
 
             admin4.Connect();
-            admin4.admin2 = new MySqlCommand("Select * from adminsaccount where LastName like'%" + textBox20.Text + "%'", admin4.adminn);
+            admin4.admin2 = new MySqlCommand("Select * from adminsaccount where LastName like'%" + textBox24.Text + "%'", admin4.adminn);
             admin4.admin1 = admin4.admin2.ExecuteReader();
 
             while (admin4.admin1.Read())
@@ -92,6 +93,7 @@ namespace WindowsFormsApplication1
                 admin4.admin1["FirstName"],
                 admin4.admin1["UserName"],
                 admin4.admin1["Password"],
+                admin4.admin1["Status"],
                 
             });
             }
@@ -108,6 +110,9 @@ namespace WindowsFormsApplication1
 
         private void Form6_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = button1;
+            this.AcceptButton = button2;
+
             LoadTable();
             LoadTable1();
         }
@@ -154,13 +159,7 @@ namespace WindowsFormsApplication1
 
         private void button4_Click(object sender, EventArgs e)
         {
-            //DELETE
-            admin4.Connect();
-            admin4.admin2 = new MySqlCommand("delete from adminsaccount where IDNumber=@IDNumber", admin4.adminn);
-            admin4.admin2.Parameters.Add(new MySqlParameter("IDNumber", label31.Text));
-            admin4.admin2.ExecuteNonQuery();
-            admin4.Disconnect();
-            LoadTable1();
+ 
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
@@ -170,19 +169,29 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //UPDATE
-            admin4.Connect();
-            admin4.admin2 = new MySqlCommand("update adminsaccount set LastName=@LastName, FirstName=@FirstName, UserName=@UserName, Password=@Password where IDNumber=@IDNumber", admin4.adminn);
-            admin4.admin2.Parameters.Add(new MySqlParameter("IDNumber", label31.Text));
-            admin4.admin2.Parameters.Add(new MySqlParameter("LastName", textBox19.Text));
-            admin4.admin2.Parameters.Add(new MySqlParameter("FirstName", textBox20.Text));
-            admin4.admin2.Parameters.Add(new MySqlParameter("UserName", textBox21.Text));
-            admin4.admin2.Parameters.Add(new MySqlParameter("Password", textBox22.Text));
+            if (textBox22.Text != textBox23.Text)
+            {
+                MessageBox.Show("Password not match!");
+            }
+            else
+            {
+                //UPDATE admin info
+                admin4.Connect();
+                admin4.admin2 = new MySqlCommand("update adminsaccount set LastName=@LastName, FirstName=@FirstName, UserName=@UserName, Password=@Password where IDNumber=@IDNumber", admin4.adminn);
+                admin4.admin2.Parameters.Add(new MySqlParameter("IDNumber", label31.Text));
+                admin4.admin2.Parameters.Add(new MySqlParameter("LastName", textBox19.Text));
+                admin4.admin2.Parameters.Add(new MySqlParameter("FirstName", textBox20.Text));
+                admin4.admin2.Parameters.Add(new MySqlParameter("UserName", textBox21.Text));
+                admin4.admin2.Parameters.Add(new MySqlParameter("Password", textBox22.Text));
+                
 
 
-            admin4.admin2.ExecuteNonQuery();
-            admin4.Disconnect();
-            LoadTable1();
+                admin4.admin2.ExecuteNonQuery();
+                admin4.Disconnect();
+                LoadTable1();
+
+                MessageBox.Show("Account successfully updated!");
+            }
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -194,7 +203,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            //UPDATE
+            //UPDATE student info
             admin4.Connect();
             admin4.admin2 = new MySqlCommand("update listofstudents set LastName=@LastName, FirstName=@FirstName, MiddleName=@MiddleName, Address=@Address, Age=@Age, Gender=@Gender, Birthday=@Birthday, PlaceofBirth=@PlaceofBirth, Nationality=@Nationality, Citizenship=@Citizenship, Religion=@Religion, FatherName=@FatherName, Occupation1=@Occupation1, MotherName=@MotherName, Occupation2=@Occupation2, GuardianName=@GuardianName, ContactNumber=@ContactNumber where StudentNumber=@StudentNumber", admin4.adminn);
             admin4.admin2.Parameters.Add(new MySqlParameter("StudentNumber", label22.Text));
@@ -218,7 +227,9 @@ namespace WindowsFormsApplication1
 
             admin4.admin2.ExecuteNonQuery();
             admin4.Disconnect();
-            LoadTable1();
+            LoadTable();
+
+            MessageBox.Show("Information is successfully updated!");
         }
 
         private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
@@ -247,5 +258,143 @@ namespace WindowsFormsApplication1
 
             }
         }
+
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            LoadTable();
+        }
+
+        private void textBox24_TextChanged(object sender, EventArgs e)
+        {
+            LoadTable1();
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox6_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox8_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox9_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox10_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox18_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox18_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox17_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox15_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox13_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox19_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox20_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        { 
+        
+        }
+
     }
 }

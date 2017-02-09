@@ -42,39 +42,39 @@ namespace WindowsFormsApplication1
                {
                     MessageBox.Show("Some of the textbox is EMPTY!");
                }
-                if ((textBox4.Text == textBox5.Text) && (textBox1.Text != "" || textBox2.Text != "" || textBox3.Text != "" || textBox4.Text != "" || textBox5.Text != ""))
-                {
-                    MessageBox.Show("You are successfuly registerd!");
+               else if (textBox4.Text != textBox5.Text)
+               {
+                   MessageBox.Show("You have re-entered a wrong password!");
+               }
+               else
+               {
 
-                    this.Hide();
-                    Form3 Form3 = new Form3();
-                    Form3.ShowDialog();
-                }
+                   //ADD
+                   admin4.Connect();
+                   admin4.admin2 = new MySqlCommand("Insert into adminsaccount(LastName, FirstName, UserName, Password) value (@LastName, @FirstName, @UserName, @Password)", admin4.adminn);
+                   admin4.admin2.Parameters.Add(new MySqlParameter("LastName", textBox1.Text));
+                   admin4.admin2.Parameters.Add(new MySqlParameter("FirstName", textBox2.Text));
+                   admin4.admin2.Parameters.Add(new MySqlParameter("UserName", textBox3.Text));
+                   admin4.admin2.Parameters.Add(new MySqlParameter("Password", textBox4.Text));
+                   admin4.admin2.ExecuteNonQuery();
+                   admin4.Disconnect();
 
-                else if (textBox4.Text != textBox5.Text)
-                {
-                    MessageBox.Show("You have re-entered a wrong password!");
-                }
+                   textBox1.Text = string.Empty;
+                   textBox2.Text = string.Empty;
+                   textBox3.Text = string.Empty;
+                   textBox4.Text = string.Empty;
+                   textBox5.Text = string.Empty;
 
-           
-            //ADD
-            admin4.Connect();
-            admin4.admin2 = new MySqlCommand("Insert into adminsaccount(LastName, FirstName, UserName, Password) value (@LastName, @FirstName, @UserName, @Password)", admin4.adminn);
-            admin4.admin2.Parameters.Add(new MySqlParameter("LastName", textBox1.Text));
-            admin4.admin2.Parameters.Add(new MySqlParameter("FirstName", textBox2.Text));
-            admin4.admin2.Parameters.Add(new MySqlParameter("UserName", textBox3.Text));
-            admin4.admin2.Parameters.Add(new MySqlParameter("Password", textBox4.Text));
-            admin4.admin2.ExecuteNonQuery();
-            admin4.Disconnect();
 
-            textBox1.Text = string.Empty;
-            textBox2.Text = string.Empty;
-            textBox3.Text = string.Empty;
-            textBox4.Text = string.Empty;
-            textBox5.Text = string.Empty;
 
-            
 
+                   MessageBox.Show("You are successfully registerd!");
+
+                   this.Hide();
+                   Form3 Form3 = new Form3();
+                   Form3.ShowDialog();
+
+               }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -107,6 +107,22 @@ namespace WindowsFormsApplication1
         private void textBox5_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

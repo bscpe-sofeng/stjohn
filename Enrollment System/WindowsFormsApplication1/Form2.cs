@@ -98,5 +98,153 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void textBox16_KeyDown(object sender, KeyEventArgs e)
+        {
+
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox7_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox9_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox13_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox13_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox14_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox17_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox18_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox10_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void textBox5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void comboBox4_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void comboBox3_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        private void comboBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (!char.IsNumber((char)e.KeyCode) && e.KeyCode != Keys.Back)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
     }
 }

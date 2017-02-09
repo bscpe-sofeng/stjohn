@@ -76,6 +76,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox24 = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
@@ -94,6 +95,8 @@
             this.textBox19 = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -167,6 +170,7 @@
             this.tabPage1.Size = new System.Drawing.Size(1271, 577);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "List of Students";
+            this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label22
             // 
@@ -175,9 +179,9 @@
             this.label22.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label22.Location = new System.Drawing.Point(417, 125);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(49, 17);
+            this.label22.Size = new System.Drawing.Size(37, 17);
             this.label22.TabIndex = 175;
-            this.label22.Text = "label22";
+            this.label22.Text = "0000";
             // 
             // label19
             // 
@@ -216,6 +220,8 @@
             this.textBox18.Name = "textBox18";
             this.textBox18.Size = new System.Drawing.Size(138, 23);
             this.textBox18.TabIndex = 171;
+            this.textBox18.TextChanged += new System.EventHandler(this.textBox18_TextChanged);
+            this.textBox18.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox18_KeyDown);
             // 
             // textBox17
             // 
@@ -224,6 +230,7 @@
             this.textBox17.Name = "textBox17";
             this.textBox17.Size = new System.Drawing.Size(199, 23);
             this.textBox17.TabIndex = 170;
+            this.textBox17.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox17_KeyDown);
             // 
             // textBox16
             // 
@@ -240,6 +247,7 @@
             this.textBox15.Name = "textBox15";
             this.textBox15.Size = new System.Drawing.Size(205, 23);
             this.textBox15.TabIndex = 168;
+            this.textBox15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox15_KeyDown);
             // 
             // textBox14
             // 
@@ -256,6 +264,7 @@
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(209, 23);
             this.textBox13.TabIndex = 166;
+            this.textBox13.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox13_KeyDown);
             // 
             // label18
             // 
@@ -450,6 +459,7 @@
             this.textBox10.Name = "textBox10";
             this.textBox10.Size = new System.Drawing.Size(129, 23);
             this.textBox10.TabIndex = 146;
+            this.textBox10.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox10_KeyDown);
             // 
             // textBox9
             // 
@@ -458,6 +468,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(130, 23);
             this.textBox9.TabIndex = 145;
+            this.textBox9.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox9_KeyDown);
             // 
             // textBox8
             // 
@@ -466,6 +477,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(130, 23);
             this.textBox8.TabIndex = 144;
+            this.textBox8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox8_KeyDown);
             // 
             // textBox7
             // 
@@ -482,6 +494,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(130, 23);
             this.textBox6.TabIndex = 142;
+            this.textBox6.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox6_KeyDown);
             // 
             // textBox5
             // 
@@ -490,6 +503,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(130, 23);
             this.textBox5.TabIndex = 141;
+            this.textBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox5_KeyDown);
             // 
             // textBox4
             // 
@@ -498,6 +512,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(130, 23);
             this.textBox4.TabIndex = 140;
+            this.textBox4.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox4_KeyDown);
             // 
             // textBox3
             // 
@@ -506,6 +521,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(130, 23);
             this.textBox3.TabIndex = 139;
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
             // 
             // textBox2
             // 
@@ -514,6 +530,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(130, 23);
             this.textBox2.TabIndex = 138;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // textBox1
             // 
@@ -522,6 +539,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(173, 23);
             this.textBox1.TabIndex = 137;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -581,6 +599,9 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Aqua;
             this.tabPage2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage2.Controls.Add(this.label32);
+            this.tabPage2.Controls.Add(this.button5);
+            this.tabPage2.Controls.Add(this.textBox24);
             this.tabPage2.Controls.Add(this.label31);
             this.tabPage2.Controls.Add(this.label30);
             this.tabPage2.Controls.Add(this.button4);
@@ -607,6 +628,14 @@
             this.tabPage2.Text = "List of Administrators";
             this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
+            // textBox24
+            // 
+            this.textBox24.Location = new System.Drawing.Point(1059, 79);
+            this.textBox24.Name = "textBox24";
+            this.textBox24.Size = new System.Drawing.Size(166, 22);
+            this.textBox24.TabIndex = 150;
+            this.textBox24.TextChanged += new System.EventHandler(this.textBox24_TextChanged);
+            // 
             // label31
             // 
             this.label31.AutoSize = true;
@@ -614,9 +643,9 @@
             this.label31.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label31.Location = new System.Drawing.Point(293, 158);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(73, 17);
+            this.label31.Size = new System.Drawing.Size(44, 17);
             this.label31.TabIndex = 149;
-            this.label31.Text = "ID Number:";
+            this.label31.Text = "00000";
             // 
             // label30
             // 
@@ -634,7 +663,7 @@
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 147;
-            this.button4.Text = "Delete";
+            this.button4.Text = "Activate";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
@@ -643,6 +672,7 @@
             this.textBox23.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox23.Location = new System.Drawing.Point(293, 426);
             this.textBox23.Name = "textBox23";
+            this.textBox23.PasswordChar = '*';
             this.textBox23.Size = new System.Drawing.Size(152, 23);
             this.textBox23.TabIndex = 146;
             this.textBox23.TextChanged += new System.EventHandler(this.textBox23_TextChanged);
@@ -652,6 +682,7 @@
             this.textBox22.Font = new System.Drawing.Font("Calibri", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox22.Location = new System.Drawing.Point(293, 373);
             this.textBox22.Name = "textBox22";
+            this.textBox22.PasswordChar = '*';
             this.textBox22.Size = new System.Drawing.Size(152, 23);
             this.textBox22.TabIndex = 145;
             // 
@@ -670,6 +701,7 @@
             this.textBox20.Name = "textBox20";
             this.textBox20.Size = new System.Drawing.Size(152, 23);
             this.textBox20.TabIndex = 143;
+            this.textBox20.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox20_KeyDown);
             // 
             // label29
             // 
@@ -762,6 +794,7 @@
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(152, 23);
             this.textBox19.TabIndex = 2;
+            this.textBox19.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox19_KeyDown);
             // 
             // label23
             // 
@@ -782,6 +815,26 @@
             this.dataGridView2.TabIndex = 0;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(499, 522);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 151;
+            this.button5.Text = "Deactivate";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(989, 82);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(50, 15);
+            this.label32.TabIndex = 152;
+            this.label32.Text = "Search:";
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -791,6 +844,7 @@
             this.Controls.Add(this.tabControl1);
             this.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
             this.Name = "Form6";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "List of Students/Admins";
@@ -875,6 +929,9 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox textBox24;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Label label32;
 
 
     }

@@ -25,3 +25,9 @@ C:\Users\nicole\Documents\Visual Studio 2013\Projects\Enrollment System\WindowsF
 C:\Users\nicole\Documents\Visual Studio 2013\Projects\Enrollment System\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form6.resources
 C:\Users\nicole\Documents\Visual Studio 2013\Projects\Enrollment System\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form7.resources
 C:\Users\nicole\Documents\Visual Studio 2013\Projects\Enrollment System\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form8.resources
+C:\Users\nicole\Documents\Visual Studio 2013\Projects\Enrollment System\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form9.resources
+C:\Users\nicole\Documents\Visual Studio 2013\Projects\Enrollment System\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.frmSectioning.resources
+C:\Users\nicole\Documents\Visual Studio 2013\Projects\Enrollment System\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form10.resources
+C:\Users\nicole\Documents\GitHub\stjohn\Enrollment System\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\nicole\Documents\GitHub\stjohn\Enrollment System\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\nicole\Documents\GitHub\stjohn\Enrollment System\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
