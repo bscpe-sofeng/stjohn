@@ -53,6 +53,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label17 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -125,6 +132,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(174, 20);
             this.textBox1.TabIndex = 54;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // dataGridView1
             // 
@@ -183,16 +191,16 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(24, 534);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(118, 15);
+            this.label6.Size = new System.Drawing.Size(166, 15);
             this.label6.TabIndex = 60;
-            this.label6.Text = "Remaining Balance:";
+            this.label6.Text = "Current Remaining Balance:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(148, 534);
+            this.label7.Location = new System.Drawing.Point(196, 532);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(51, 17);
             this.label7.TabIndex = 61;
@@ -202,15 +210,15 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(358, 500);
+            this.label8.Location = new System.Drawing.Point(354, 482);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(77, 15);
+            this.label8.Size = new System.Drawing.Size(99, 15);
             this.label8.TabIndex = 62;
-            this.label8.Text = "Amount Pay:";
+            this.label8.Text = "Amount Receive:";
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(441, 498);
+            this.textBox2.Location = new System.Drawing.Point(459, 480);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 20);
             this.textBox2.TabIndex = 63;
@@ -260,16 +268,18 @@
             // 
             // button1
             // 
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Location = new System.Drawing.Point(697, 600);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 68;
-            this.button1.Text = "OK";
+            this.button1.Text = "Print";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Location = new System.Drawing.Point(616, 600);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
@@ -282,19 +292,93 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(345, 536);
+            this.label13.Location = new System.Drawing.Point(376, 516);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(90, 15);
+            this.label13.Size = new System.Drawing.Size(77, 15);
             this.label13.TabIndex = 70;
-            this.label13.Text = "Amount to Pay:";
+            this.label13.Text = "Amount Pay:";
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(441, 532);
+            this.textBox3.Location = new System.Drawing.Point(459, 514);
             this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 71;
+            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(400, 563);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 15);
+            this.label17.TabIndex = 72;
+            this.label17.Text = "Change:";
+            // 
+            // button3
+            // 
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button3.Location = new System.Drawing.Point(459, 559);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 74;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label18.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(665, 149);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(69, 17);
+            this.label18.TabIndex = 75;
+            this.label18.Text = "2017-2018";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(583, 149);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(76, 15);
+            this.label19.TabIndex = 76;
+            this.label19.Text = "School Year:";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label20.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(148, 600);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(51, 17);
+            this.label20.TabIndex = 77;
+            this.label20.Text = "000000";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label15.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(471, 563);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(51, 17);
+            this.label15.TabIndex = 73;
+            this.label15.Text = "000000";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(24, 600);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(118, 15);
+            this.label23.TabIndex = 79;
+            this.label23.Text = "Remaining Balance:";
             // 
             // Form5
             // 
@@ -303,6 +387,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Aqua;
             this.ClientSize = new System.Drawing.Size(784, 635);
+            this.Controls.Add(this.label23);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.label17);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.button2);
@@ -366,5 +457,12 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label23;
     }
 }

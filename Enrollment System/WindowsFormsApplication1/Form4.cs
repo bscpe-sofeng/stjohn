@@ -37,25 +37,51 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
 
-            
-               if (textBox1.Text == "" || textBox2.Text == "" || textBox3.Text == "" || textBox4.Text == "" || textBox5.Text == "")
-               {
-                    MessageBox.Show("Some of the textbox is EMPTY!");
-               }
+
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Please enter your Lastname!");
+                textBox1.Focus();
+                return;
+            }
+            if (textBox2.Text == "")
+            {
+                MessageBox.Show("Please enter your Firstname!");
+                textBox2.Focus();
+                return;
+            }
+            if (textBox3.Text == "")
+            {
+                MessageBox.Show("Please enter your Username!");
+                textBox3.Focus();
+                return;
+            }
+            if (textBox4.Text == "")
+            {
+                MessageBox.Show("Please enter your Password!");
+                textBox4.Focus();
+                return;
+            }
                else if (textBox4.Text != textBox5.Text)
                {
                    MessageBox.Show("You have re-entered a wrong password!");
+                   textBox4.Clear();
+                   textBox5.Clear();
+                   textBox4.Focus();
+                   return;
                }
                else
                {
 
                    //ADD
                    admin4.Connect();
-                   admin4.admin2 = new MySqlCommand("Insert into adminsaccount(LastName, FirstName, UserName, Password) value (@LastName, @FirstName, @UserName, @Password)", admin4.adminn);
+                   admin4.admin2 = new MySqlCommand("Insert into adminsaccount(LastName, FirstName, UserName, Password, Status) value (@LastName, @FirstName, @UserName, @Password, @Status)", admin4.adminn);
                    admin4.admin2.Parameters.Add(new MySqlParameter("LastName", textBox1.Text));
                    admin4.admin2.Parameters.Add(new MySqlParameter("FirstName", textBox2.Text));
                    admin4.admin2.Parameters.Add(new MySqlParameter("UserName", textBox3.Text));
                    admin4.admin2.Parameters.Add(new MySqlParameter("Password", textBox4.Text));
+                   admin4.admin2.Parameters.Add(new MySqlParameter("Status", label7.Text));
+               
                    admin4.admin2.ExecuteNonQuery();
                    admin4.Disconnect();
 
@@ -79,9 +105,7 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            Form3 Form3 = new Form3();
-            Form3.ShowDialog();
+            
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -123,6 +147,13 @@ namespace WindowsFormsApplication1
             {
                 e.SuppressKeyPress = true;
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Form3 Form3 = new Form3();
+            Form3.ShowDialog();
         }
     }
 }

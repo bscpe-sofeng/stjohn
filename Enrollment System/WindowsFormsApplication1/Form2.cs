@@ -14,6 +14,11 @@ namespace WindowsFormsApplication1
 {
     public partial class Form2 : Form
     {
+        internal static string deparment;
+        public static string Last;
+        public static string First;
+        public static string Middle;
+
         Class1 admin4 = new Class1();
         public Form2()
         {
@@ -37,7 +42,7 @@ namespace WindowsFormsApplication1
             {
                 //database Student Info
                 admin4.Connect();
-                admin4.admin2 = new MySqlCommand("Insert into listofstudents(LastName, FirstName, MiddleName, Address, Age, AverageGrade, Birthday, Gender, PlaceofBirth, Nationality, Citizenship, Religion, FatherName, Occupation1, MotherName, Occupation2, GuardianName, ContactNumber) value(@LastName, @FirstName, @MiddleName, @Address, @Age, @AverageGrade, @Birthday, @Gender, @PlaceofBirth, @Nationality, @Citizenship, @Religion, @FatherName, @Occupation1, @MotherName, @Occupation2, @GuardianName, @ContactNumber)", admin4.adminn);
+                admin4.admin2 = new MySqlCommand("Insert into " + deparment + "(LastName, FirstName, MiddleName, Address, Age, AverageGrade, Birthday, Gender, PlaceofBirth, Nationality, Citizenship, Religion, FatherName, Occupation1, MotherName, Occupation2, GuardianName, ContactNumber) value(@LastName, @FirstName, @MiddleName, @Address, @Age, @AverageGrade, @Birthday, @Gender, @PlaceofBirth, @Nationality, @Citizenship, @Religion, @FatherName, @Occupation1, @MotherName, @Occupation2, @GuardianName, @ContactNumber)", admin4.adminn);
                 admin4.admin2.Parameters.Add(new MySqlParameter("LastName", textBox1.Text));
                 admin4.admin2.Parameters.Add(new MySqlParameter("FirstName", textBox2.Text));
                 admin4.admin2.Parameters.Add(new MySqlParameter("MiddleName", textBox3.Text));
@@ -57,7 +62,20 @@ namespace WindowsFormsApplication1
                 admin4.admin2.Parameters.Add(new MySqlParameter("GuardianName", textBox17.Text));
                 admin4.admin2.Parameters.Add(new MySqlParameter("ContactNumber", textBox18.Text));
                 admin4.admin2.ExecuteNonQuery();
+                long lastID = admin4.admin2.LastInsertedId;
                 admin4.Disconnect();
+
+
+                //name
+                Last = textBox1.Text;
+                First = textBox2.Text;
+                Middle = textBox3.Text;
+
+
+                this.Hide();
+                Form9.StudentID = lastID;
+                Form9 Form10 = new Form9();
+                Form10.ShowDialog();
             }
         }
 

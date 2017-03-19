@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.Common;
 
 namespace WindowsFormsApplication1
 {
@@ -19,8 +20,9 @@ namespace WindowsFormsApplication1
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Form2 Form2 = new Form2();
-            Form2.ShowDialog();
+            Form2.deparment = "seniorhigh";
+            Form2 frm = new Form2();
+            frm.ShowDialog();
         }
 
         private void Form10_Load(object sender, EventArgs e)
@@ -30,14 +32,16 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form2 Form2 = new Form2();
-            Form2.ShowDialog();
+            Form2.deparment = "elementary";
+            Form2 frm = new Form2();
+            frm.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            Form2 Form2 = new Form2();
-            Form2.ShowDialog();
+            Form2.deparment = "juniorhigh";
+            Form2 frm = new Form2();
+            frm.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)

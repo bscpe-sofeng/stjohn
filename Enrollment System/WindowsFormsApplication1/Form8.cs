@@ -17,9 +17,9 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             //name
             this.label13.Text = Form9.use1;
-            //balance
-            this.label22.Text = Form9.use2;
-            //pay
+            //total amount
+            this.label22.Text = Form9.use8;
+            //AMTpay
             this.label32.Text = Form9.use3;
             //school year
             this.label11.Text = Form9.use4;
@@ -27,8 +27,9 @@ namespace WindowsFormsApplication1
             this.label6.Text = Form9.use5;
             //change
             this.label33.Text = Form9.use6;
-
-            //label22.Text = label26.Text;
+            //AMTtoPAY
+            this.label26.Text = Form9.use7;
+            this.label29.Text = Form9.use7;
         }
 
         private void label8_Click(object sender, EventArgs e)
